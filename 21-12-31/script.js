@@ -76,3 +76,15 @@
         // console.log(users)
             console.log(user.age)
     }
+
+    const age = 10
+    let result = ''
+    if (age < 19) {
+        result = 'false'
+    } else {
+        result = 'true'
+    }
+
+    // 조건 ? 참 : 거짓
+    age < 19 ? result = `false` : result = `true`
+    result = age < 19 ?`false` : `true`
