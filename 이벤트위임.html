@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <button class="a btn">a</button>
+    <button class="a btn">b</button>
+    <button class="a remove">c</button>
+    <input type="text">
+    </div>
+    <button class="addbutton">add</button>
+    <script>
+        // 이벤트 위임: 요소가 추가되어도 이벤트가 자동으로 연결됨 -> 자식을 클릭하면 부모한테도 연결되니깐 
+        //buttonClick()
+        const addButton = document.querySelector('.addbutton')
+        const div = document.querySelector('div')
+        div.addEventListener('click', (e) => {
+            // event 객체: 이벤트에 관련된 정보가 담긴 객체 (자바스크립트가 자동으로 넣어줌)
+            console.log(e.target)
+            // event.target: 이벤트가 발생한 요소 
+            console.log(div.tagName)
+            // if(e.target.tagName == `INPUT`){
+            // alert('inputClick')
+            // }
+            // if(e.target.tagName == 'BUTTON'){
+            //     alert('buttonClick')
+            // }
+            if(e.target.classList.contains('btn') == true){
+                alert('btn')
+            }
+            if(e.target.classList.contains('remove') == true){
+                alert('remove')
+            }
+        })
+        addButton.addEventListener('click',function () {
+            div.innerHTML += `<button>d</button>`
+            // buttonClick()
+        })
+        // function buttonClick(p) {
+        //     const buttonClick = document.querySelectorAll('button')
+        //     for (let i = 0; i < buttonClick.length; i++) {
+        //         buttonClick[i].addEventListener('click', function () {
+        //             alert()
+        //         })
+        //     }
+        // }
+        
+        
+    </script>
+</body>
+</html>
